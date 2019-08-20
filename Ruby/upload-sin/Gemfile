@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+gem 'puma'
+gem 'rack'
+gem 'sinatra'
+gem 'aws-sdk-dynamodb'
+gem 'aws-sdk-s3'
+gem 'aws-xray-sdk'

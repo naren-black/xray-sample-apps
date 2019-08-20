@@ -1,0 +1,76 @@
+#!/usr/bin/env ruby
+require 'sinatra'
+require "aws-sdk"
+
+get '/' do
+  return %Q{
+    <link rel="stylesheet" type="text/css" media="all" href="public/css/styles.css" />
+    <script src="public/js/script.js"></script>
+    <style>
+    #progress p
+      {
+        display: block;
+        width: 240px;
+        padding: 2px 5px;
+        margin: 2px 0;
+        border: 1px inset #446;
+        border-radius: 5px;
+      }
+      #progress p.success
+      {
+      	background: #0c0 none 0 0 no-repeat;
+      }
+
+      #progress p.failed
+      {
+      	background: #c00 none 0 0 no-repeat;
+      }
+    </style>
+    <script>
+    function UploadFile(file) {
+
+    	var xhr = new XMLHttpRequest();
+    	if (xhr.upload) {
+    		var o = $id("progress");
+    		var progress = o.appendChild(document.createElement("p"));
+    		progress.appendChild(document.createTextNode("upload " + file.name));
+      }
+      xhr.upload.addEventListener("progress", function(e) {
+			  var pc = parseInt(100 - (e.loaded / e.total * 100));
+			  progress.style.backgroundPosition = pc + "% 0";
+		  }, false);
+      xhr.onreadystatechange = function(e) {
+			  if (xhr.readyState == 4) {
+				  progress.className = (xhr.status == 200 ? "success" : "failure");
+			  }
+		  };
+    </script>
+    <form action="upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+      <div>
+        <input type="file" name="file" value="" id="file">
+      </div>
+      <div>
+        <input type="submit" value="Upload &uarr;">
+      </div>
+    </form>
+    <div id="progress"></div>
+  }
+end
+
+post '/upload' do
+  # awskey     = 'AKIAJDM3CU4ICIIEBK6A'
+  # awssecret  = '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'
+  # bucket     = 'bucketofnaren'
+  file       = params[:file][:tempfile]
+  filename   = params[:file][:filename]
+  s3 = Aws::S3::Resource.new(access_key_id: "AKIAJDM3CU4ICIIEBK6A", secret_access_key: "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", region: "us-east-1")
+  nn = s3.bucket("bucketofnaren").object(filename)
+  begin
+    File.open(file, "rb") {|fh|
+    nn.put(body: fh)}
+    return "Yey the file #{filename} got uploaded..."
+  rescue
+    return "The file #{filename} did not get uploaded baabu!!"
+  end
+
+end

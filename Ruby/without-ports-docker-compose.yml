@@ -1,0 +1,21 @@
+version: "3"
+services:
+  nginx:
+    depends_on:
+      - web
+    build: ./nginx
+    ports:
+      - 80:80
+  web:
+    build: ./upload-sin
+    environment:
+      - TABLE_NAME=TestTableNaren
+    command: rake setup:rackUpRun
+    ports:
+      - "0.0.0.0:9292:9292"
+    volumes:
+      - ~/.aws/:/root/.aws/
+  xray-daemon:
+    build: ./xray-daemon
+    volumes:
+      - ~/.aws/:/root/.aws/

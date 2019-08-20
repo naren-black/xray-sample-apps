@@ -1,0 +1,29 @@
+version: "3"
+services:
+  nginx:
+    depends_on:
+      - web
+    build: ./nginx
+    ports:
+      - 80:80
+  web:
+    depends_on:
+      - "xray-daemon"
+    links:
+      - "xray-daemon"
+    build: ./upload-sin
+    environment:
+      - TABLE_NAME=TestTableNaren
+      - AWS_XRAY_DAEMON_ADDRESS=xray-daemon:2000
+    command: rake setup:rackUpRun
+    ports:
+      - "0:9292"
+    volumes:
+      - ~/.aws/:/root/.aws/
+  xray-daemon:
+    build: ./xray-daemon
+    ports:
+      - "0:2000/udp"
+      - "0:2000/tcp"
+    volumes:
+      - ~/.aws/:/root/.aws/

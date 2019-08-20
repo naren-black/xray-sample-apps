@@ -1,0 +1,7 @@
+Region: "us-east-1"
+Logging:
+  LogRotation: true
+  LogLevel: "debug"
+  LogPath: "/tmp/daemonic-xray.log"
+LocalMode: true
+Version: 2

@@ -1,0 +1,334 @@
+{
+    "Duration": 3.665,
+    "Id": "1-5bb06ece-aea3f35014734d5e22c82e52",
+    "Segments": [
+        {
+            "Document": {
+                "id": "dcf616b0acab6c9d",
+                "name": "SingleInputMainSegment",
+                "start_time": 1538289358.87982,
+                "end_time": 1538289362.54444,
+                "aws": {
+                    "xray": {
+                        "sdk_version": "0.10.2",
+                        "sdk": "X-Ray for Ruby"
+                    }
+                },
+                "service": {
+                    "runtime": "ruby",
+                    "runtime_version": "2.5.1"
+                },
+                "trace_id": "1-5bb06ece-aea3f35014734d5e22c82e52",
+                "subsegments": [
+                    {
+                        "id": "cdd6a821a5c070c3",
+                        "name": "DynamoDB",
+                        "start_time": 1538289358.8857422,
+                        "end_time": 1538289359.883842,
+                        "http": {
+                            "response": {
+                                "status": 200,
+                                "content_length": 2
+                            }
+                        },
+                        "aws": {
+                            "operation": "PutItem",
+                            "region": "us-east-1",
+                            "retries": 0,
+                            "request_id": "RULDC7J57EBLDF0UI1F7J30Q03VV4KQNSO5AEMVJF66Q9ASUAAJG",
+                            "table_name": "EmployeeRecords",
+                            "resource_names": [
+                                "EmployeeRecords"
+                            ]
+                        },
+                        "namespace": "aws"
+                    },
+                    {
+                        "id": "7243f628db3cdf84",
+                        "name": "DynamoDB",
+                        "start_time": 1538289359.884779,
+                        "end_time": 1538289360.188931,
+                        "http": {
+                            "response": {
+                                "status": 200,
+                                "content_length": 2
+                            }
+                        },
+                        "aws": {
+                            "operation": "PutItem",
+                            "region": "us-east-1",
+                            "retries": 0,
+                            "request_id": "KD0U1L05PQN6BV6EDA3MB5PH33VV4KQNSO5AEMVJF66Q9ASUAAJG",
+                            "table_name": "EmployeeRecords",
+                            "resource_names": [
+                                "EmployeeRecords"
+                            ]
+                        },
+                        "namespace": "aws"
+                    },
+                    {
+                        "id": "402228be5c714195",
+                        "name": "DynamoDB",
+                        "start_time": 1538289360.189745,
+                        "end_time": 1538289360.4971871,
+                        "http": {
+                            "response": {
+                                "status": 200,
+                                "content_length": 2
+                            }
+                        },
+                        "aws": {
+                            "operation": "PutItem",
+                            "region": "us-east-1",
+                            "retries": 0,
+                            "request_id": "5V22J5EE3C3M8JV0V26DEKSQU7VV4KQNSO5AEMVJF66Q9ASUAAJG",
+                            "table_name": "EmployeeRecords",
+                            "resource_names": [
+                                "EmployeeRecords"
+                            ]
+                        },
+                        "namespace": "aws"
+                    },
+                    {
+                        "id": "b76227a7758b759e",
+                        "name": "DynamoDB",
+                        "start_time": 1538289360.498061,
+                        "end_time": 1538289360.803631,
+                        "http": {
+                            "response": {
+                                "status": 200,
+                                "content_length": 2
+                            }
+                        },
+                        "aws": {
+                            "operation": "PutItem",
+                            "region": "us-east-1",
+                            "retries": 0,
+                            "request_id": "HELG7CMEFHV7J8FHQHKUCJUT67VV4KQNSO5AEMVJF66Q9ASUAAJG",
+                            "table_name": "EmployeeRecords",
+                            "resource_names": [
+                                "EmployeeRecords"
+                            ]
+                        },
+                        "namespace": "aws"
+                    },
+                    {
+                        "id": "ac41cab665d7da96",
+                        "name": "DynamoDB",
+                        "start_time": 1538289360.804449,
+                        "end_time": 1538289361.1121159,
+                        "http": {
+                            "response": {
+                                "status": 200,
+                                "content_length": 2
+                            }
+                        },
+                        "aws": {
+                            "operation": "PutItem",
+                            "region": "us-east-1",
+                            "retries": 0,
+                            "request_id": "7R2S7LU3TO8CI0A5UUFQ06CN6BVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                            "table_name": "EmployeeRecords",
+                            "resource_names": [
+                                "EmployeeRecords"
+                            ]
+                        },
+                        "namespace": "aws"
+                    },
+                    {
+                        "id": "6f007cfbdcd2a9ed",
+                        "name": "S3",
+                        "start_time": 1538289361.1149921,
+                        "end_time": 1538289362.5443468,
+                        "http": {
+                            "response": {
+                                "status": 200,
+                                "content_length": 0
+                            }
+                        },
+                        "aws": {
+                            "operation": "PutObject",
+                            "region": "us-east-1",
+                            "retries": 0,
+                            "request_id": null,
+                            "id_2": "KYxXUCwlL4NgT+3YVN2zA92u4Oo0u758FiYYKMJdcUamOhqaoDzVN9vOJu+D/R5RrpR4ZoUjYfw="
+                        },
+                        "namespace": "aws"
+                    }
+                ]
+            },
+            "Id": "dcf616b0acab6c9d"
+        },
+        {
+            "Document": {
+                "id": "098eeec03ae1b576",
+                "name": "DynamoDB",
+                "start_time": 1538289360.804449,
+                "end_time": 1538289361.1121159,
+                "parent_id": "ac41cab665d7da96",
+                "inferred": true,
+                "http": {
+                    "response": {
+                        "status": 200,
+                        "content_length": 2
+                    }
+                },
+                "aws": {
+                    "operation": "PutItem",
+                    "region": "us-east-1",
+                    "retries": 0,
+                    "request_id": "7R2S7LU3TO8CI0A5UUFQ06CN6BVV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "table_name": "EmployeeRecords",
+                    "resource_names": [
+                        "EmployeeRecords"
+                    ]
+                },
+                "trace_id": "1-5bb06ece-aea3f35014734d5e22c82e52",
+                "origin": "AWS::DynamoDB::Table"
+            },
+            "Id": "098eeec03ae1b576"
+        },
+        {
+            "Document": {
+                "id": "1543168810ff51ca",
+                "name": "DynamoDB",
+                "start_time": 1538289358.8857422,
+                "end_time": 1538289359.883842,
+                "parent_id": "cdd6a821a5c070c3",
+                "inferred": true,
+                "http": {
+                    "response": {
+                        "status": 200,
+                        "content_length": 2
+                    }
+                },
+                "aws": {
+                    "operation": "PutItem",
+                    "region": "us-east-1",
+                    "retries": 0,
+                    "request_id": "RULDC7J57EBLDF0UI1F7J30Q03VV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "table_name": "EmployeeRecords",
+                    "resource_names": [
+                        "EmployeeRecords"
+                    ]
+                },
+                "trace_id": "1-5bb06ece-aea3f35014734d5e22c82e52",
+                "origin": "AWS::DynamoDB::Table"
+            },
+            "Id": "1543168810ff51ca"
+        },
+        {
+            "Document": {
+                "id": "017d7ba13b935498",
+                "name": "DynamoDB",
+                "start_time": 1538289360.189745,
+                "end_time": 1538289360.4971871,
+                "parent_id": "402228be5c714195",
+                "inferred": true,
+                "http": {
+                    "response": {
+                        "status": 200,
+                        "content_length": 2
+                    }
+                },
+                "aws": {
+                    "operation": "PutItem",
+                    "region": "us-east-1",
+                    "retries": 0,
+                    "request_id": "5V22J5EE3C3M8JV0V26DEKSQU7VV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "table_name": "EmployeeRecords",
+                    "resource_names": [
+                        "EmployeeRecords"
+                    ]
+                },
+                "trace_id": "1-5bb06ece-aea3f35014734d5e22c82e52",
+                "origin": "AWS::DynamoDB::Table"
+            },
+            "Id": "017d7ba13b935498"
+        },
+        {
+            "Document": {
+                "id": "1607840607aacb72",
+                "name": "S3",
+                "start_time": 1538289361.1149921,
+                "end_time": 1538289362.5443468,
+                "parent_id": "6f007cfbdcd2a9ed",
+                "inferred": true,
+                "http": {
+                    "response": {
+                        "status": 200,
+                        "content_length": 0
+                    }
+                },
+                "aws": {
+                    "operation": "PutObject",
+                    "region": "us-east-1",
+                    "retries": 0,
+                    "request_id": null,
+                    "id_2": "KYxXUCwlL4NgT+3YVN2zA92u4Oo0u758FiYYKMJdcUamOhqaoDzVN9vOJu+D/R5RrpR4ZoUjYfw="
+                },
+                "trace_id": "1-5bb06ece-aea3f35014734d5e22c82e52",
+                "origin": "AWS::S3"
+            },
+            "Id": "1607840607aacb72"
+        },
+        {
+            "Document": {
+                "id": "12ccd1200b715421",
+                "name": "DynamoDB",
+                "start_time": 1538289359.884779,
+                "end_time": 1538289360.188931,
+                "parent_id": "7243f628db3cdf84",
+                "inferred": true,
+                "http": {
+                    "response": {
+                        "status": 200,
+                        "content_length": 2
+                    }
+                },
+                "aws": {
+                    "operation": "PutItem",
+                    "region": "us-east-1",
+                    "retries": 0,
+                    "request_id": "KD0U1L05PQN6BV6EDA3MB5PH33VV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "table_name": "EmployeeRecords",
+                    "resource_names": [
+                        "EmployeeRecords"
+                    ]
+                },
+                "trace_id": "1-5bb06ece-aea3f35014734d5e22c82e52",
+                "origin": "AWS::DynamoDB::Table"
+            },
+            "Id": "12ccd1200b715421"
+        },
+        {
+            "Document": {
+                "id": "102f842a1050c809",
+                "name": "DynamoDB",
+                "start_time": 1538289360.498061,
+                "end_time": 1538289360.803631,
+                "parent_id": "b76227a7758b759e",
+                "inferred": true,
+                "http": {
+                    "response": {
+                        "status": 200,
+                        "content_length": 2
+                    }
+                },
+                "aws": {
+                    "operation": "PutItem",
+                    "region": "us-east-1",
+                    "retries": 0,
+                    "request_id": "HELG7CMEFHV7J8FHQHKUCJUT67VV4KQNSO5AEMVJF66Q9ASUAAJG",
+                    "table_name": "EmployeeRecords",
+                    "resource_names": [
+                        "EmployeeRecords"
+                    ]
+                },
+                "trace_id": "1-5bb06ece-aea3f35014734d5e22c82e52",
+                "origin": "AWS::DynamoDB::Table"
+            },
+            "Id": "102f842a1050c809"
+        }
+    ]
+}

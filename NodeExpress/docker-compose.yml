@@ -1,0 +1,29 @@
+version: "3"
+services:
+  nginx:
+    depends_on:
+      - web
+    build: ./nginx
+    ports:
+      - 80:80
+  web:
+    depends_on:
+      - "xray-daemon"
+    links:
+      - "xray-daemon"
+    build: ./exprsCurConvMysql
+    environment:
+      - AWS_XRAY_DAEMON_ADDRESS=xray-daemon:2000
+      - RDS_ENDPOINT=localhost
+    command: npm start
+    ports:
+      - "0:8000"
+    volumes:
+      - ~/.aws/:/root/.aws/
+  xray-daemon:
+    build: ./xray-daemon
+    ports:
+      - "0:2000/udp"
+      - "0:2000/tcp"
+    volumes:
+      - ~/.aws/:/root/.aws/
